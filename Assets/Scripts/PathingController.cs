@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class PathingController : MonoBehaviour
 {
-    private float location1x = -15f;
-    private float location1z = 15f;
-    private float location2x = -12.5f;
-    private float location2z = -5f;
-    private float location3x = -5f;
-    private float location3z = 15f;
+    private float location1x = -20f;
+    private float location1z = 0.5f;
+    private float location2x = -30f;
+    private float location2z = -0.5f;
+    private float location3x = -30f;
+    private float location3z = -10f;
     public int currentPos = 1;
     public Camera cam;
     public NavMeshAgent agent;
