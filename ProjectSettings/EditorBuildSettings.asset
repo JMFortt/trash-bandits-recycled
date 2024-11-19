@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 8c73975240c30fd4eaf87d2d3e11ffd0
   - enabled: 1
-    path: Assets/Scenes/MainScreen.unity
+    path: Assets/Scenes/TestingScenes/JennetTesting.unity
     guid: 364dea95a89854669bfd5c30eb2632a9
   - enabled: 1
     path: Assets/Scenes/Credits.unity
