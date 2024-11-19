@@ -532,6 +532,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27e9e287e15964a83a5d41b653817ded, type: 3}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: cat_purr
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d76b4542c305740d28065b31f4183c10, type: 3}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: cat_meow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3417471390709503531, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
