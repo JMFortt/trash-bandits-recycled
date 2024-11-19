@@ -74,10 +74,16 @@ public class Raccoon : MonoBehaviour
         }
     }
 
-    void onCollisionExit(Collision collision) {
+    void OnCollisionExit(Collision collision) {
+        TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
+
         if (collision.collider == trash_collider) {
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
         }
+
+        trash_time = 0;
+        currentcan.progress_im.fillAmount = 0;
+        currentcan.progressbar.SetActive(false);
     }
     public void CollectTrash()
     {

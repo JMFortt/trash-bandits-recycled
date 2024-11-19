@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 226762773}
   - component: {fileID: 226762772}
   - component: {fileID: 226762771}
+  - component: {fileID: 226762777}
   m_Layer: 3
   m_Name: Cat
   m_TagString: Untagged
@@ -520,6 +521,24 @@ Transform:
   - {fileID: 141044335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226762777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226762770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a225b02fb80a421418d77124045fbead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cat_collider: {fileID: 226762773}
+  human_collider: {fileID: 96948128}
+  caught: 0
+  hold_time: 0
+  speed: 0
+  human: {fileID: 465629261}
 --- !u!1001 &228012055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,6 +550,50 @@ PrefabInstance:
     - target: {fileID: 848812753824437960, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27e9e287e15964a83a5d41b653817ded, type: 3}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: cat_purr
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d76b4542c305740d28065b31f4183c10, type: 3}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: cat_meow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3417471390709503531, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -821,7 +884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &411407404
 RectTransform:
   m_ObjectHideFlags: 0
