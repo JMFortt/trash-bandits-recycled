@@ -8,13 +8,11 @@ public class Cat : MonoBehaviour
     [SerializeField] public float hold_time = 0, speed;
     [SerializeField] public NavMeshAgent human;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed = human.speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
