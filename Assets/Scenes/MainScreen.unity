@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 226762773}
   - component: {fileID: 226762772}
   - component: {fileID: 226762771}
+  - component: {fileID: 226762777}
   m_Layer: 3
   m_Name: Cat
   m_TagString: Untagged
@@ -520,6 +521,24 @@ Transform:
   - {fileID: 141044335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226762777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226762770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a225b02fb80a421418d77124045fbead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cat_collider: {fileID: 226762773}
+  human_collider: {fileID: 96948128}
+  caught: 0
+  hold_time: 0
+  speed: 0
+  human: {fileID: 465629261}
 --- !u!1001 &228012055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -821,7 +840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &411407404
 RectTransform:
   m_ObjectHideFlags: 0
