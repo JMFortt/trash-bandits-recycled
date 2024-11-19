@@ -69,6 +69,15 @@ public class Raccoon : MonoBehaviour
                 movement.speed = 5f;
             }
         }
+        if (collision.collider == trash_collider) {
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
+        }
+    }
+
+    void onCollisionExit(Collision collision) {
+        if (collision.collider == trash_collider) {
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
+        }
     }
     public void CollectTrash()
     {
@@ -77,5 +86,6 @@ public class Raccoon : MonoBehaviour
         movement.speed = Mathf.Max((movement.speed - (trash * 0.5f)), 0.1f);
         currentcan.trash = 0;
         trash_time = 0;
+        GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
     }
 }
