@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class Cat : MonoBehaviour
 {
     [SerializeField] public Collider cat_collider, human_collider;
-    [SerializeField] public int caught = 0, speed;
-    [SerializeField] public float hold_time = 0;
+    [SerializeField] public int caught = 0;
+    [SerializeField] public float hold_time = 0, speed;
     [SerializeField] public NavMeshAgent human;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
