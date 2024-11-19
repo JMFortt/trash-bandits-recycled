@@ -55,39 +55,3 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: cat_purr
-    clip: {fileID: 8300000, guid: 27e9e287e15964a83a5d41b653817ded, type: 3}
-    volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 1
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: cat_meow
-    clip: {fileID: 8300000, guid: d76b4542c305740d28065b31f4183c10, type: 3}
-    volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 1
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: game_win
-    clip: {fileID: 8300000, guid: e411a152c7f07478fa5b3150486ab016, type: 3}
-    volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 1
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
-  - name: game_over
-    clip: {fileID: 8300000, guid: 894bfbf32638d4568bc79107bcba33ea, type: 3}
-    volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 1
-    mixerGroup: {fileID: 0}
-    source: {fileID: 0}
