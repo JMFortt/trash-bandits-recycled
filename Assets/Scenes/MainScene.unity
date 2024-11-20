@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1034,7 +1034,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &226762772
 MonoBehaviour:
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1738,8 +1738,11 @@ MonoBehaviour:
   trash: 0
   trash_number: {fileID: 1575531351}
   progressbar: {fileID: 2135946547}
+  can_image: {fileID: 347479135}
   progress_im: {fileID: 409427025}
   empty: 0
+  grey: {fileID: 2100000, guid: 4f3f85093d3ef6546833b219f119132b, type: 2}
+  red: {fileID: 2100000, guid: ff3697acf9d0d8e4a83e5f08a35afbb3, type: 2}
 --- !u!65 &347479137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2948,8 +2951,11 @@ MonoBehaviour:
   trash: 0
   trash_number: {fileID: 310103838}
   progressbar: {fileID: 411407403}
+  can_image: {fileID: 790766684}
   progress_im: {fileID: 1923123503}
   empty: 0
+  grey: {fileID: 2100000, guid: 4f3f85093d3ef6546833b219f119132b, type: 2}
+  red: {fileID: 2100000, guid: ff3697acf9d0d8e4a83e5f08a35afbb3, type: 2}
 --- !u!1 &812340846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Color: {r: 0.4490565, g: 0.4490565, b: 0.4490565, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3060,8 +3066,11 @@ MonoBehaviour:
   trash: 0
   trash_number: {fileID: 425699969}
   progressbar: {fileID: 1601997318}
+  can_image: {fileID: 836716978}
   progress_im: {fileID: 1632953912}
   empty: 0
+  grey: {fileID: 2100000, guid: 4f3f85093d3ef6546833b219f119132b, type: 2}
+  red: {fileID: 2100000, guid: ff3697acf9d0d8e4a83e5f08a35afbb3, type: 2}
 --- !u!65 &836716980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3633,8 +3642,11 @@ MonoBehaviour:
   trash: 0
   trash_number: {fileID: 1613402843}
   progressbar: {fileID: 1910690397}
+  can_image: {fileID: 931733268}
   progress_im: {fileID: 375453485}
   empty: 0
+  grey: {fileID: 2100000, guid: 4f3f85093d3ef6546833b219f119132b, type: 2}
+  red: {fileID: 2100000, guid: ff3697acf9d0d8e4a83e5f08a35afbb3, type: 2}
 --- !u!65 &931733270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5600,8 +5612,11 @@ MonoBehaviour:
   trash: 0
   trash_number: {fileID: 864905466}
   progressbar: {fileID: 1061454517}
+  can_image: {fileID: 1496121057}
   progress_im: {fileID: 646273053}
   empty: 0
+  grey: {fileID: 2100000, guid: 4f3f85093d3ef6546833b219f119132b, type: 2}
+  red: {fileID: 2100000, guid: ff3697acf9d0d8e4a83e5f08a35afbb3, type: 2}
 --- !u!65 &1496121059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5743,7 +5758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6679245, g: 0.6679245, b: 0.6679245, a: 1}
+  m_Color: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6738,8 +6753,11 @@ MonoBehaviour:
   trash: 0
   trash_number: {fileID: 1058933690}
   progressbar: {fileID: 1591136991}
+  can_image: {fileID: 1698135571}
   progress_im: {fileID: 1597494232}
   empty: 0
+  grey: {fileID: 2100000, guid: 4f3f85093d3ef6546833b219f119132b, type: 2}
+  red: {fileID: 2100000, guid: ff3697acf9d0d8e4a83e5f08a35afbb3, type: 2}
 --- !u!65 &1698135573
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8212,7 +8230,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2146898270
 MonoBehaviour:

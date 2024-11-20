@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Raccoon : MonoBehaviour
 {
@@ -19,23 +20,23 @@ public class Raccoon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
-        Den den = den_collider.GetComponent<Den>();
+        //TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
+        //Den den = den_collider.GetComponent<Den>();
 
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            trash_time = 0;
-            currentcan.progress_im.fillAmount = 0;
-            currentcan.progressbar.SetActive(false);
-        }
+        //if (Input.GetKeyUp(KeyCode.E))
+        //{
+        //    trash_time = 0;
+        //    currentcan.progress_im.fillAmount = 0;
+        //    currentcan.progressbar.SetActive(false);
+        //}
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
+        TrashCan currentcan = collision.collider.GetComponent<TrashCan>();
         Den den = den_collider.GetComponent<Den>();
 
-        if (Input.GetKey(KeyCode.E) && (collision.collider == trash_collider) && !currentcan.empty)
+        if (Input.GetKey(KeyCode.E) && (currentcan) && !currentcan.empty)
         {
             trash_time += Time.deltaTime;
             currentcan.progressbar.SetActive(true);
@@ -43,8 +44,11 @@ public class Raccoon : MonoBehaviour
 
             if (trash_time >= 3)
             {
-                CollectTrash();
+                CollectTrash(currentcan);
+                currentcan.progressbar.SetActive(false);
             }
+
+            if (currentcan.empty) currentcan.progressbar.SetActive(false);
         }
 
         if (Input.GetKeyUp(KeyCode.E))
@@ -57,9 +61,10 @@ public class Raccoon : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        TrashCan currentcan = collision.collider.GetComponent<TrashCan>();
+
         if (collision.collider == den_collider)
         {
-            TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
             Den den = den_collider.GetComponent<Den>();
 
             if (trash > 0)
@@ -69,15 +74,16 @@ public class Raccoon : MonoBehaviour
                 movement.speed = 5f;
             }
         }
-        if (collision.collider == trash_collider) {
+        if (collision.gameObject.GetType() == typeof(TrashCan))
+        {
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
         }
     }
 
     void OnCollisionExit(Collision collision) {
-        TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
+        TrashCan currentcan = collision.collider.GetComponent<TrashCan>();
 
-        if (collision.collider == trash_collider) {
+        if (currentcan) {
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
         }
 
@@ -85,12 +91,11 @@ public class Raccoon : MonoBehaviour
         currentcan.progress_im.fillAmount = 0;
         currentcan.progressbar.SetActive(false);
     }
-    public void CollectTrash()
+    public void CollectTrash(TrashCan can)
     {
-        TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
-        trash += currentcan.trash;
+        trash += can.trash;
         movement.speed = Mathf.Max((movement.speed - (trash * 0.5f)), 0.1f);
-        currentcan.trash = 0;
+        can.trash = 0;
         trash_time = 0;
         GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
     }
