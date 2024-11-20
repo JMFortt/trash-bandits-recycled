@@ -8,36 +8,45 @@ public class Cat : MonoBehaviour
     [SerializeField] public float hold_time = 0, speed;
     [SerializeField] public NavMeshAgent human;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed = human.speed;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        hold_time = 0;
-
-        if (collision.collider == human_collider)
+        if (Input.GetKeyUp(KeyCode.M))
         {
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                hold_time += Time.deltaTime;
+            hold_time = 0;
+            human.speed = speed;
+        }
+    }
 
-                while (hold_time < 3)
-                {
-                    human.speed = 0;
-                }
+    private void OnTriggerStay(Collider collider)
+    {
+        if (Input.GetKey(KeyCode.M) && (collider.GetComponent<Collider>() == human_collider))
+        {
+            hold_time += Time.deltaTime;
 
-            }
-            else if (Input.GetKeyUp(KeyCode.M))
+            if (hold_time < 3)
             {
-                hold_time = 0;
+                human.speed = 0;
+            } 
+            else 
+            {
                 human.speed = speed;
             }
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.GetComponent<Collider>() == human_collider)
+        {
+            hold_time = 0;
+            human.speed = speed;
         }
     }
 
