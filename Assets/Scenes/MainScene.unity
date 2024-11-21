@@ -1171,6 +1171,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2167319149788958001, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[3].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167319149788958001, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
+      propertyPath: sounds.Array.data[4].loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3417471390709503531, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1211,7 +1219,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2740924979798280736, guid: fcfaf061449b74e3c9b591aedf8a99a1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8350,6 +8359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trash: 0
+  trashcans: 0
   raccoon_collider: {fileID: 2146898271}
   trash_collider: {fileID: 790766685}
   den_collider: {fileID: 1877044540}

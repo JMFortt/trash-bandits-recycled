@@ -70,6 +70,8 @@ public class Raccoon : MonoBehaviour
     {
         if (trigger == human_collider)
         {
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("game_over_lose");
             SceneManager.LoadScene("EndScreen");
         }
     }
@@ -77,7 +79,6 @@ public class Raccoon : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         collision.collider.TryGetComponent<TrashCan>(out TrashCan currentcan);
-
         if (collision.collider == den_collider)
         {
             Den den = den_collider.GetComponent<Den>();
@@ -87,9 +88,11 @@ public class Raccoon : MonoBehaviour
                 den.score += trash;
                 trash = 0;
                 movement.speed = 5f;
+                GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
+                GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("game_over_win");
             }
         }
-        if (collision.gameObject.GetType() == typeof(TrashCan))
+        if (currentcan)
         {
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
         }

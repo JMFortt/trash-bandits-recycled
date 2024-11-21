@@ -32,6 +32,7 @@ public class Cat : MonoBehaviour
 
             if (hold_time < 3)
             {
+                GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("cat_meow");
                 human.speed = 0;
             } 
             else 
@@ -47,6 +48,7 @@ public class Cat : MonoBehaviour
         {
             hold_time = 0;
             human.speed = speed;
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("cat_meow");
         }
     }
 
