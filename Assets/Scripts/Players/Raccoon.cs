@@ -6,11 +6,16 @@ using UnityEngine.UIElements;
 
 public class Raccoon : MonoBehaviour
 {
-    [SerializeField] public int trash = 0;
+    [SerializeField] public int trash = 0, trashcans = 0;
     [SerializeField] public Collider raccoon_collider, trash_collider, den_collider, human_collider;
     [SerializeField] public Collision trash_collision;
     [SerializeField] public float trash_time = 0;
     [SerializeField] public PlayerMovement movement;
+    public static Raccoon Instance;
+    void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -105,11 +110,10 @@ public class Raccoon : MonoBehaviour
     }
     public void CollectTrash(TrashCan can)
     {
-        EndScreen.Instance.trash += can.trash;
-        EndScreen.Instance.trashcans += 1;
-
         trash += can.trash;
+        trashcans += 1;
         movement.speed = Mathf.Max((movement.speed - (trash * 0.5f)), 0.1f);
+
         can.trash = 0;
         trash_time = 0;
         GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");

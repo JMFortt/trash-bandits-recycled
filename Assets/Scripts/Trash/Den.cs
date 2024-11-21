@@ -5,10 +5,14 @@ public class Den : MonoBehaviour
 {
     [SerializeField] public int score = 0;
     [SerializeField] public TextMeshPro score_number;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static Den Instance;
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
+        Instance = this;
     }
 
     // Update is called once per frame
