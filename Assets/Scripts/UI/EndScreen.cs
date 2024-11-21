@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class EndScreen : MonoBehaviour
     void Update()
     {
         
+    }
+    public void EnterScene(string scenename)
+    {
+        SceneManager.LoadScene(scenename);
     }
 
 }
