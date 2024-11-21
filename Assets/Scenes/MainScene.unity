@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 2
-  speed: 5
+  speed: 7
   rb: {fileID: 226762771}
 --- !u!65 &226762773
 BoxCollider:
@@ -8254,7 +8254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
-  speed: 5
+  speed: 7
   rb: {fileID: 2146898269}
 --- !u!65 &2146898271
 BoxCollider:
