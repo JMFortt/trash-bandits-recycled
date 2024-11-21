@@ -1034,7 +1034,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &226762772
 MonoBehaviour:
@@ -8230,7 +8230,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &2146898270
 MonoBehaviour:
@@ -8330,7 +8330,7 @@ Transform:
   m_GameObject: {fileID: 2146898268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.4, y: 0.72969, z: -27.2}
+  m_LocalPosition: {x: -27.4, y: 0, z: -27.1}
   m_LocalScale: {x: 1.9009618, y: 1.9009618, z: 1.9009618}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8353,6 +8353,7 @@ MonoBehaviour:
   raccoon_collider: {fileID: 2146898271}
   trash_collider: {fileID: 790766685}
   den_collider: {fileID: 1877044540}
+  human_collider: {fileID: 1081764255}
   trash_time: 0
   movement: {fileID: 2146898270}
 --- !u!1660057539 &9223372036854775807

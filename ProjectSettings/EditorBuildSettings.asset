@@ -9,10 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 8c73975240c30fd4eaf87d2d3e11ffd0
   - enabled: 1
-    path: Assets/Scenes/TestingScenes/JennetTesting.unity
-    guid: 364dea95a89854669bfd5c30eb2632a9
+    path: Assets/Scenes/MainScene.unity
+    guid: fbb0d33a4cf9c934aa1f34343890136b
+  - enabled: 1
+    path: Assets/Scenes/HowTo.unity
+    guid: fe04ee9640036cc4daf0079e041a9ff6
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 7ca982088543b0844ae91362cd82dae4
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 809be4b4f8a7ccd48b79e782f9739222
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
