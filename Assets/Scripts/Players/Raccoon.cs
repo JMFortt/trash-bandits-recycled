@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,11 +8,13 @@ using UnityEngine.UIElements;
 
 public class Raccoon : MonoBehaviour
 {
-    [SerializeField] public int trash = 0, trashcans = 0;
+    [SerializeField] public int trash = 0, trashcans = 0, total_trash = 0;
     [SerializeField] public Collider raccoon_collider, trash_collider, den_collider, human_collider;
     [SerializeField] public Collision trash_collision;
     [SerializeField] public float trash_time = 0;
     [SerializeField] public PlayerMovement movement;
+    [SerializeField] public TextMeshProUGUI tracker_text;
+    [SerializeField] public TextMeshPro can1, can2, can3, can4, can5, can6;
     public static Raccoon Instance;
     void Awake()
     {
@@ -20,12 +24,18 @@ public class Raccoon : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        tracker_text.text = "Trashcans Left: \n" + (6 - trashcans).ToString() + "/6";
+        total_trash = Convert.ToInt32(can1.text) + Convert.ToInt32(can2.text) + Convert.ToInt32(can3.text)
+            + Convert.ToInt32(can4.text) + Convert.ToInt32(can5.text) + Convert.ToInt32(can6.text);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Den.Instance.score == total_trash)
+        {
+            SceneManager.LoadScene("VictoryScreen");
+        }
         //TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
         //Den den = den_collider.GetComponent<Den>();
 
@@ -61,8 +71,11 @@ public class Raccoon : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E))
         {
             trash_time = 0;
-            currentcan.progress_im.fillAmount = 0;
-            currentcan.progressbar.SetActive(false);
+            if (currentcan)
+            {
+                currentcan.progress_im.fillAmount = 0;
+                currentcan.progressbar.SetActive(false);
+            }
         }
     }
 
@@ -87,7 +100,7 @@ public class Raccoon : MonoBehaviour
             {
                 den.score += trash;
                 trash = 0;
-                movement.speed = 5f;
+                movement.speed = 7f;
                 GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
                 GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("game_over_win");
             }
@@ -115,7 +128,8 @@ public class Raccoon : MonoBehaviour
     {
         trash += can.trash;
         trashcans += 1;
-        movement.speed = Mathf.Max((movement.speed - (trash * 0.5f)), 0.1f);
+        movement.speed = Mathf.Max((movement.speed - (trash * 0.2f)), 2f);
+        tracker_text.text = "Trashcans Left: \n" + (6 - trashcans).ToString() + "/6";
 
         can.trash = 0;
         trash_time = 0;
