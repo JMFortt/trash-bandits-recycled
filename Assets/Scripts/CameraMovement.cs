@@ -27,8 +27,8 @@ public class CameraMovement : MonoBehaviour
             // zoom out (static)
             if (distance > 30)
             {
-                GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, 40f, 0.01f);
-                transform.position = Vector3.Lerp(transform.position, new Vector3(0.0f, 25.0f, 0.0f), 0.01f);
+                GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, 30f, 0.01f);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(-10.0f, 25.0f, 12.0f), 0.01f);
 
             }
             // zoom in (follow)

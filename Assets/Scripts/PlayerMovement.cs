@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         {
             movementVec += Vector3.back;
         }
-        // normalize and apply
+        //normalize and apply
         rb.position += movementVec.normalized * Time.deltaTime * speed;
     }
 }
