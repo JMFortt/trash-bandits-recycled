@@ -48,7 +48,7 @@ MonoBehaviour:
   sounds:
   - name: trash
     clip: {fileID: 8300000, guid: df7a415faf5da4e08bf2b871cbc24bed, type: 3}
-    volume: 0.7
+    volume: 0.8
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: game_over_win
     clip: {fileID: 8300000, guid: e411a152c7f07478fa5b3150486ab016, type: 3}
-    volume: 1
+    volume: 0.75
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -84,10 +84,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: game_over_lose
     clip: {fileID: 8300000, guid: b7648d188f4f742b6a57b99e7516d909, type: 3}
-    volume: 1
+    volume: 0.75
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: 4f242f96579134e69a99759615eb0035, type: 3}
+    volume: 0.4
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

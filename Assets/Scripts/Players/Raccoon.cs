@@ -57,6 +57,7 @@ public class Raccoon : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E) && (currentcan) && !currentcan.empty)
         {
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
             Homeowner.GetComponent<PathingController>().investigateNoise(transform.position.x, transform.position.z);
             trash_time += Time.deltaTime;
             currentcan.progressbar.SetActive(true);
@@ -108,10 +109,10 @@ public class Raccoon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
             }
         }
-        if (currentcan)
-        {
-            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
-        }
+        // if (currentcan)
+        // {
+        //     GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
+        // }
     }
 
     void OnCollisionExit(Collision collision) {
