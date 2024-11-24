@@ -26,7 +26,7 @@ public class Cat : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (Input.GetKey(KeyCode.M) && (collider.GetComponent<Collider>() == human_collider))
+        if (Input.GetKey(KeyCode.RightShift) && (collider.GetComponent<Collider>() == human_collider))
         {
             hold_time += Time.deltaTime;
 

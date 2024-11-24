@@ -15,6 +15,7 @@ public class Raccoon : MonoBehaviour
     [SerializeField] public PlayerMovement movement;
     [SerializeField] public TextMeshProUGUI tracker_text;
     [SerializeField] public TextMeshPro can1, can2, can3, can4, can5, can6;
+    public GameObject Homeowner;
     public static Raccoon Instance;
     void Awake()
     {
@@ -56,6 +57,7 @@ public class Raccoon : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E) && (currentcan) && !currentcan.empty)
         {
+            Homeowner.GetComponent<PathingController>().investigateNoise(transform.position.x, transform.position.z);
             trash_time += Time.deltaTime;
             currentcan.progressbar.SetActive(true);
             currentcan.progress_im.fillAmount = (trash_time / 3);
