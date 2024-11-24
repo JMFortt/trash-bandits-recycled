@@ -38,6 +38,7 @@ public class Cat : MonoBehaviour
             else 
             {
                 human.speed = speed;
+                GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("cat_meow");
             }
         }
     }
