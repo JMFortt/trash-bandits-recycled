@@ -31,6 +31,7 @@ public class Cat : MonoBehaviour
         // cancel ability early (lift key)
         if ((Input.GetKeyUp(KeyCode.RightShift)) && holding)
         {
+            GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("cat_meow");
             holding = false;
             human.speed = speed;
             cooldown = 0;
