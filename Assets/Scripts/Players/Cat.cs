@@ -7,6 +7,8 @@ public class Cat : MonoBehaviour
     [SerializeField] public int caught = 0;
     [SerializeField] public float hold_time = 0, cooldown = 0,speed;
     [SerializeField] public NavMeshAgent human;
+    [SerializeField] public SpriteRenderer cat_sprite;
+    [SerializeField] public Sprite cat_left, cat_right;
     private bool holding = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +37,15 @@ public class Cat : MonoBehaviour
             holding = false;
             human.speed = speed;
             cooldown = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            cat_sprite.sprite = cat_right;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            cat_sprite.sprite = cat_left;
         }
     }
 
