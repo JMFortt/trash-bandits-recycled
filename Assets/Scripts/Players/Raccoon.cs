@@ -15,6 +15,9 @@ public class Raccoon : MonoBehaviour
     [SerializeField] public PlayerMovement movement;
     [SerializeField] public TextMeshProUGUI tracker_text;
     [SerializeField] public TextMeshPro can1, can2, can3, can4, can5, can6;
+    [SerializeField] public SpriteRenderer raccoon_render;
+    [SerializeField] public Sprite raccoon_left, raccoon_right;
+
     public GameObject Homeowner;
     public static Raccoon Instance;
     void Awake()
@@ -47,6 +50,14 @@ public class Raccoon : MonoBehaviour
         //    currentcan.progress_im.fillAmount = 0;
         //    currentcan.progressbar.SetActive(false);
         //}
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            raccoon_render.sprite = raccoon_right;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            raccoon_render.sprite = raccoon_left;
+        }
     }
 
     private void OnCollisionStay(Collision collision)

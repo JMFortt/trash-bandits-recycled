@@ -10,11 +10,13 @@ public class TrashCan : MonoBehaviour
     [SerializeField] public GameObject progressbar, can_image;
     [SerializeField] public Image progress_im;
     [SerializeField] public bool empty = false;
-    [SerializeField] private Material grey, red;
+    //[SerializeField] private Material grey, red;
+    [SerializeField] public SpriteRenderer trash_render;
+    [SerializeField] public Sprite trash_empty;
 
     void Start()
     {
-        can_image.GetComponent<Renderer>().material = grey;
+        //can_image.GetComponent<Renderer>().material = grey;
 
         trash = Random.Range(1, 5);
         trash_number.text = trash.ToString();
@@ -28,7 +30,8 @@ public class TrashCan : MonoBehaviour
         if (trash == 0)
         {
             empty = true;
-            can_image.GetComponent<Renderer>().material = red;
+            //can_image.GetComponent<Renderer>().material = red;
+            trash_render.sprite = trash_empty;
         }
     }
 
