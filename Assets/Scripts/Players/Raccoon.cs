@@ -19,6 +19,7 @@ public class Raccoon : MonoBehaviour
     [SerializeField] public Sprite raccoon_left, raccoon_right;
 
     public GameObject Homeowner;
+    private bool isDead = false;
     public static Raccoon Instance;
     void Awake()
     {
@@ -28,6 +29,7 @@ public class Raccoon : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isDead = false;
         tracker_text.text = "Trashcans Left: \n" + (6 - trashcans).ToString() + "/6";
         total_trash = Convert.ToInt32(can1.text) + Convert.ToInt32(can2.text) + Convert.ToInt32(can3.text)
             + Convert.ToInt32(can4.text) + Convert.ToInt32(can5.text) + Convert.ToInt32(can6.text);
@@ -66,7 +68,7 @@ public class Raccoon : MonoBehaviour
         //TrashCan currentcan = collision.collider.GetComponent<TrashCan>();
         Den den = den_collider.GetComponent<Den>();
 
-        if (Input.GetKey(KeyCode.E) && (currentcan) && !currentcan.empty)
+        if (Input.GetKey(KeyCode.E) && (currentcan) && !currentcan.empty && !isDead)
         {
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
             Homeowner.GetComponent<PathingController>().investigateNoise(transform.position.x, transform.position.z);
@@ -99,6 +101,7 @@ public class Raccoon : MonoBehaviour
         if (trigger == human_collider)
         {
             Debug.Log("collided with human");
+            isDead = true;
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("game_over_lose");
             SceneManager.LoadScene("EndScreen");
