@@ -1272,7 +1272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 2
-  speed: 7
+  speed: 17
   rb: {fileID: 226762771}
 --- !u!65 &226762773
 BoxCollider:
@@ -1358,7 +1358,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -47, y: 0.3, z: 3.5}
-  m_LocalScale: {x: 2.1299827, y: 2.1299827, z: 2.1299827}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 141044335}
@@ -10531,7 +10531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
-  speed: 7
+  speed: 17
   rb: {fileID: 2146898269}
 --- !u!65 &2146898271
 BoxCollider:
@@ -10617,7 +10617,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -56, y: 0.3, z: 3.5}
-  m_LocalScale: {x: 1.9009618, y: 1.9009618, z: 1.9009618}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1962930263}
