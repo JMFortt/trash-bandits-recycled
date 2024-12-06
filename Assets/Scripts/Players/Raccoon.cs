@@ -11,7 +11,7 @@ public class Raccoon : MonoBehaviour
     [SerializeField] public int trash = 0, trashcans = 0, total_trash = 0;
     [SerializeField] public Collider raccoon_collider, trash_collider, den_collider, human_collider;
     [SerializeField] public Collision trash_collision;
-    [SerializeField] public float trash_time = 0;
+    [SerializeField] public float trash_time = 0, speed;
     [SerializeField] public PlayerMovement movement;
     [SerializeField] public TextMeshProUGUI tracker_text;
     [SerializeField] public TextMeshPro can1, can2, can3, can4, can5, can6;
@@ -24,6 +24,7 @@ public class Raccoon : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        speed = movement.speed;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -119,7 +120,7 @@ public class Raccoon : MonoBehaviour
             {
                 den.score += trash;
                 trash = 0;
-                movement.speed = 7f;
+                movement.speed = speed;
                 GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
             }
         }
