@@ -1,22 +1,21 @@
-//using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Cat : MonoBehaviour
 {
-    [SerializeField] public Collider cat_collider, human_collider;
-    [SerializeField] public int caught = 0;
-    [SerializeField] public float hold_time = 0, cooldown = 0,speed;
-    [SerializeField] public NavMeshAgent human;
-    [SerializeField] public SpriteRenderer cat_sprite, symbol_sprite;
-    [SerializeField] public Sprite cat_left, cat_right, distract_sprite, ready_sprite;
+    public Collider cat_collider, human_collider;
+    public Sprite distract_sprite, ready_sprite;
+    public SpriteRenderer symbol_sprite;
+    public NavMeshAgent human;
+    public Rigidbody rb;
+    public int caught = 0;
+    public float hold_time = 0, cooldown = 0, speed;
     private bool holding = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed = human.speed;
-        //symbol_sprite.sprite = null;
     }
 
     // Update is called once per frame
@@ -42,15 +41,6 @@ public class Cat : MonoBehaviour
             holding = false;
             human.speed = speed;
             cooldown = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            cat_sprite.sprite = cat_right;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            cat_sprite.sprite = cat_left;
         }
     }
 

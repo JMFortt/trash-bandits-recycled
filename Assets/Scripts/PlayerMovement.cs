@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public int playerNum;
+    public Rigidbody rb;
+    public SpriteRenderer sprite;
+    public Animator animator;
     private Vector3 movementVec;
     private string leftCommand;
     private string rightCommand;
     private string upCommand;
     private string downCommand;
+    private bool defaultDirection = true;
+    public int playerNum;
     public float speed;
-    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        // define player input keys *TO CHANGE -> INPUT MANAGER
+        // define player input keys
         if (playerNum == 1)
         {
             leftCommand = "a";
@@ -36,7 +37,29 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // initialize movement vector
+        // sprite direction controller:
+        if ((rb.linearVelocity.x > 0) && (!defaultDirection))
+        {
+            sprite.flipX = false;
+            defaultDirection = true;
+        }
+        else if ((rb.linearVelocity.x < 0) && (defaultDirection))
+        {
+            sprite.flipX = true;
+            defaultDirection = false;
+        }
+
+        // sprite animation controller:
+        if ((Input.GetKey(rightCommand)) || (Input.GetKey(leftCommand)) || (Input.GetKey(upCommand)) || (Input.GetKey(downCommand)))
+        {
+            animator.Play("Walk");
+        }
+        else
+        {
+            animator.Play("Idle");
+        }
+
+        // movement controller:
         movementVec = Vector3.zero;
         // right movement
         if (Input.GetKey(rightCommand))

@@ -1,26 +1,22 @@
 using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Raccoon : MonoBehaviour
 {
-    [SerializeField] public int trash = 0, trashcans = 0, total_trash = 0;
-    [SerializeField] public Collider raccoon_collider, trash_collider, den_collider, human_collider;
-    [SerializeField] public Collision trash_collision;
-    [SerializeField] public float trash_time = 0, speed;
-    [SerializeField] public PlayerMovement movement;
-    [SerializeField] public TextMeshProUGUI tracker_text;
-    [SerializeField] public TextMeshPro can1, can2, can3, can4, can5, can6;
-    [SerializeField] public SpriteRenderer raccoon_render;
-    [SerializeField] public Sprite raccoon_left, raccoon_right;
-
+    public Collider raccoon_collider, trash_collider, den_collider, human_collider;
+    public TextMeshPro can1, can2, can3, can4, can5, can6;
+    public Collision trash_collision;
+    public PlayerMovement movement;
+    public TextMeshProUGUI tracker_text;
+    public Sprite raccoon_left, raccoon_right;
     public GameObject Homeowner;
-    private bool isDead = false;
     public static Raccoon Instance;
+    public float trash_time = 0, speed;
+    public int trash = 0, trashcans = 0, total_trash = 0;
+    private bool isDead = false;
+
     void Awake()
     {
         Instance = this;
@@ -44,29 +40,12 @@ public class Raccoon : MonoBehaviour
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("game_over_win");
             SceneManager.LoadScene("VictoryScreen");
         }
-        //TrashCan currentcan = trash_collider.GetComponent<TrashCan>();
-        //Den den = den_collider.GetComponent<Den>();
-
-        //if (Input.GetKeyUp(KeyCode.E))
-        //{
-        //    trash_time = 0;
-        //    currentcan.progress_im.fillAmount = 0;
-        //    currentcan.progressbar.SetActive(false);
-        //}
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            raccoon_render.sprite = raccoon_right;
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            raccoon_render.sprite = raccoon_left;
-        }
     }
 
+    // trash collection controller:
     private void OnCollisionStay(Collision collision)
     {
         collision.collider.TryGetComponent<TrashCan>(out TrashCan currentcan);
-        //TrashCan currentcan = collision.collider.GetComponent<TrashCan>();
         Den den = den_collider.GetComponent<Den>();
 
         if (Input.GetKey(KeyCode.E) && (currentcan) && !currentcan.empty && !isDead)
@@ -97,6 +76,7 @@ public class Raccoon : MonoBehaviour
         }
     }
 
+    // spotted by human -> game over trigger
     void OnTriggerEnter(Collider trigger)
     {
         if (trigger == human_collider)
@@ -109,6 +89,7 @@ public class Raccoon : MonoBehaviour
         }
     }
 
+    // deposit trash at den controller
     void OnCollisionEnter(Collision collision)
     {
         collision.collider.TryGetComponent<TrashCan>(out TrashCan currentcan);
@@ -124,12 +105,9 @@ public class Raccoon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("trash");
             }
         }
-        // if (currentcan)
-        // {
-        //     GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Play("trash");
-        // }
     }
 
+    // done collecting trash -> leave before finished
     void OnCollisionExit(Collision collision) {
 
         collision.collider.TryGetComponent<TrashCan>(out TrashCan currentcan);
@@ -143,6 +121,8 @@ public class Raccoon : MonoBehaviour
         trash_time = 0;
 
     }
+
+    // done collecting trash -> success
     public void CollectTrash(TrashCan can)
     {
         trash += can.trash;
