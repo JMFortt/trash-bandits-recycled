@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,12 +11,14 @@ public class Cat : MonoBehaviour
     public Rigidbody rb;
     public int caught = 0;
     public float hold_time = 0, cooldown = 0, speed;
+    private Sprite current_sprite;
     private bool holding = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed = human.speed;
+        current_sprite = ready_sprite;
     }
 
     // Update is called once per frame
@@ -30,13 +33,16 @@ public class Cat : MonoBehaviour
         {
             cooldown += Time.deltaTime;
         }
-        if (cooldown > 5) symbol_sprite.sprite = ready_sprite;
+
+        // ability indicator management
+        if (cooldown > 5) symbol_sprite.sprite = current_sprite;
         else if (cooldown <= 5) symbol_sprite.sprite = null;
 
         // cancel ability early (lift key)
         if ((Input.GetKeyUp(KeyCode.RightShift)) && holding)
         {
             symbol_sprite.sprite = null;
+            current_sprite = ready_sprite;
             GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("cat_meow");
             holding = false;
             human.speed = speed;
@@ -53,7 +59,7 @@ public class Cat : MonoBehaviour
             {
                 if (cooldown >= 5)
                 {
-                    symbol_sprite.sprite = distract_sprite;
+                    current_sprite = distract_sprite;
                     holding = true;
                     human.speed = 0;
                     hold_time = 0;
@@ -71,6 +77,7 @@ public class Cat : MonoBehaviour
                 else
                 {
                     symbol_sprite.sprite = null;
+                    current_sprite = ready_sprite;
                     holding = false;
                     human.speed = speed;
                     GameObject.FindGameObjectWithTag("manager").GetComponent<AudioManager>().Stop("cat_meow");
@@ -86,6 +93,7 @@ public class Cat : MonoBehaviour
         if ((collider.GetComponent<Collider>() == human_collider) && holding)
         {
             symbol_sprite.sprite = null;
+            current_sprite = ready_sprite;
             holding = false;
             human.speed = speed;
             cooldown = 0;

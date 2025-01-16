@@ -38,15 +38,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // sprite direction controller:
-        if ((rb.linearVelocity.x > 0) && (!defaultDirection))
+        if ((Input.GetKey(rightCommand)) || (Input.GetKey(leftCommand)) || (Input.GetKey(upCommand)) || (Input.GetKey(downCommand)))
         {
-            sprite.flipX = false;
-            defaultDirection = true;
-        }
-        else if ((rb.linearVelocity.x < 0) && (defaultDirection))
-        {
-            sprite.flipX = true;
-            defaultDirection = false;
+            if ((rb.linearVelocity.x > 0) && (!defaultDirection))
+            {
+                sprite.flipX = false;
+                defaultDirection = true;
+            }
+            else if ((rb.linearVelocity.x < 0) && (defaultDirection))
+            {
+                sprite.flipX = true;
+                defaultDirection = false;
+            }
         }
 
         // sprite animation controller:
