@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    [SerializeField] public TextMeshPro endtext;
+    [SerializeField] public TextMeshProUGUI endtext;
     public static EndScreen Instance;
 
     void Awake()

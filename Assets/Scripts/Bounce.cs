@@ -34,7 +34,6 @@ public class Bounce : MonoBehaviour
                 position = 0;
             }
         }
-        Debug.Log(X);
         GetComponent<Transform>().position = new Vector3(Mathf.Lerp(GetComponent<Transform>().position.x, X, 0.01f), Y, Z);
     }
 }
