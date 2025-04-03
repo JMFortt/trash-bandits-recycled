@@ -28,14 +28,14 @@ public class CameraMovement : MonoBehaviour
             if (distance > 30)
             {
                 GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, 30f, 0.01f);
-                transform.position = Vector3.Lerp(transform.position, new Vector3(0.0f, 25.0f, 15.0f), 0.05f);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(0.0f, 25.0f, 15.0f), 0.025f);
 
             }
             // zoom in (follow)
             else
             {
                 GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, 15f, 0.01f);
-                transform.position = Vector3.Lerp(transform.position, new Vector3(((player1.transform.position.x + player2.transform.position.x) / 2), 25.0f, ((player1.transform.position.z + player2.transform.position.z) / 2)), 0.05f);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(((player1.transform.position.x + player2.transform.position.x) / 2), 25.0f, ((player1.transform.position.z + player2.transform.position.z) / 2)), 0.025f);
             }
         }
     }
