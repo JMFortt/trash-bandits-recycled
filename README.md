@@ -5,4 +5,3 @@ Play as a cat and raccoon trying to steal ~~delicious~~ trash! A collaborative t
 Originally a group project that I continued solo after the class ended.
 
 - Play the game on itch.io [here](https://jmfortt.itch.io/trash-bandits-recycled)
-- See the original group project team repo [here](https://github.com/JMFortt/trash-bandits)
